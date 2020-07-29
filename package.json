@@ -2,7 +2,7 @@
   "name": "findrecipe",
   "version": "0.1.0",
   "scripts": {
-    "build": "cd react && npm install && npm run build"
+    "build": "cd smart_recipes && npm install && npm run build"
   },
   "dependencies": {},
   "devDependencies": {},
