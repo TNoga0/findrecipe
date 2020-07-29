@@ -62,7 +62,7 @@ TEMPLATES = [
         'DIRS': [
             'fridge_reciper/templates',
             'recipe_getter/templates',
-            os.path.join(BASE_DIR, '..', 'smart_recipes/build')
+            os.path.join(BASE_DIR, 'smart_recipes/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, '..', 'smart_recipes/build/static')
+    os.path.join(BASE_DIR, 'smart_recipes/build/static')
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
