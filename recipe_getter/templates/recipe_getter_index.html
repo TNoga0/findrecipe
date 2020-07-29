@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base_index.html' %}
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static "css/style.css" %}"/>
+    {% block title %}<title>Recipe Finder | Gathered recipes</title>{% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <h1>All the recipez gathered:</h1>
+    <br><br>
+    <form method="post" id="ingredients_form" onsubmit="return false;" novalidate>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Change database</button>
+    </form>
+    <ul>
+        {% for recipe in all_recipes %}
+            <li>
+                {{recipe.meal_type}} , {{ recipe.name }}
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>
+                        {{ ingredient }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock content%}
+</html>

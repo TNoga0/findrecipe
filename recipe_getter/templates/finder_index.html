@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% extends 'base_index.html' %}
+<html lang="en">
+{% load widget_tweaks %}
+
+<head>
+  {% block title %}<title>Recipe Finder | Home</title>{% endblock %}
+</head>
+
+{% block content %}
+<body>
+
+  <div class="div-content col-md-6">
+
+  <h3 class="instructions">The rules are simple:</h3>
+  <div class="content">
+      <ol>
+          <li>you choose a desired meal type from the dropdown list</li>
+          <li>in the text field you enter your fridge contents, all separated by commas,
+          without spaces. Please refrain from adding fancy types of products (like "freshly
+          ground pepper" - just type "pepper") or packaging/volume info. The only exceptions are
+          sugar and flour, as it's pretty important for baking</li>
+          <li>you smash the "submit" button and wait until the app suggests some recipes</li>
+      </ol>
+  </div>
+      <br>
+  <h3 class="instructions">Enjoy! Any feedback is appreciated.</h3>
+  <br>
+  <!--TODO render form manually and make it prettier as it's ugly af rn -->
+  <form method="post" novalidate>
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+          <div class="alert alert-danger" role="alert">
+              {% for error in form.non_field_errors %}
+                  {{ error }}
+              {% endfor %}
+          </div>
+      {% endif %}
+
+      {% for field in form.visible_fields %}
+          <div class="form-group">
+            <!-- Here "Ingredients:" was present {{ field.label_tag }} -->
+
+            {% if form.is_bound %}
+              {% if field.errors %}
+                {% render_field field class="form-control is-invalid" %}
+                {% for error in field.errors %}
+                  <div class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% render_field field class="form-control is-valid" %}
+              {% endif %}
+            {% else %}
+              {% render_field field class="form-control" %}
+            {% endif %}
+            {% if field.help_text %}
+              <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+          </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+  </form>
+
+  </div>
+
+</body>
+
+{% endblock content %}
+</html>

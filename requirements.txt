@@ -1,0 +1,13 @@
+Django>=2.0,<3.0
+psycopg2>=2.7,<3.0
+beautifulsoup4
+lxml
+sqlparse
+django-widget-tweaks
+djangorestframework
+markdown
+django-filter
+gunicorn
+dj-database-url
+django-heroku
+whitenoise

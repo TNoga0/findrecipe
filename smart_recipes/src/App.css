@@ -1,0 +1,185 @@
+/* TODO Cleanup this mess */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:500,700,900&display=swap');
+
+
+.Results {
+  margin: auto;
+  width: 60%;
+}
+
+body {
+  background-color: #42384a;
+}
+
+/* footer customisation */
+
+h3, h1, ul, li {
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+form {
+  margin-top: 50px;
+}
+
+.form-control {
+  background: #42384a;
+  color: white;
+}
+
+.form-control.solid{
+  background: #42384a;
+}
+
+/* ---------
+Tagify styles
+   --------- */
+
+.tagify {
+  color: white;
+  --placeholder-color: white;
+}
+
+
+.instructions {
+  color: white;
+  text-align: center;
+}
+
+/* ---------
+End Tagify styles
+   --------- */
+
+.page-wrap {
+  min-height: 80%;
+  /* equal to footer height */
+  margin-bottom: 50px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.sticky .page-wrap:after {
+  height: 100px;
+}
+
+.sticky {
+  padding-top: 100px;
+  color: white;
+  font-family: 'Roboto' !important;
+  font-weight: 500;
+}
+
+/* end footer customisation */
+
+
+.container-nav {
+  padding: 1% 2% 3% 2%
+}
+
+.btn-submit {
+  width: 120px;
+  height: 50px;
+}
+
+.about-header {
+  color: white;
+  text-align: center;
+  font-family: 'Roboto' !important;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.content {
+  color: white;
+  text-align: justify;
+  font-family: 'Roboto' !important;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.content a {
+  text-decoration: underline;
+  color: white;
+}
+
+.div-content {
+  margin: auto;
+}
+
+.navbar-brand {
+  font-family: 'Roboto' !important;
+  font-weight: 700;
+  font-size: 36px;
+  color: white;
+}
+
+.navbar-nav {
+  font-family: 'Roboto' !important;
+  font-weight: 500;
+  font-size: 28px;
+  color: white;
+}
+
+@media screen and (min-width: 721px) {
+  .navbar-brand {
+    font-size: 36px;
+  }
+
+  .navbar-nav {
+    font-size: 28px;
+  }
+
+  .content {
+    font-size: 24px;
+  }
+
+  .footer {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  .navbar-nav {
+    font-size: 18px;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar-nav li {
+  padding: 25px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'base_index.html' %}
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static "css/style.css" %}"/>
+    {% block title %}<title>Recipe Finder | Your ideas</title>{% endblock %}
+</head>
+{% block content %}
+
+<body>
+    <div class="div-content col-md-6">
+        <h1>Result:</h1>
+        <br><br>
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{recipe.image_url}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.name}}</h5>
+                    <a href="{{recipe.address}}" class="btn btn-primary btn-card">Go to recipe</a>
+                </div>
+            </div>
+            {% endfor %}
+<!--        <ul>-->
+<!--            {% for recipe in recipes %}-->
+<!--                <li>-->
+<!--                    <img src="{{recipe.image_url}}" class="rounded float-left"><br>-->
+<!--                    <a href="{{recipe.address}}">{{recipe.name}}</a>-->
+<!--                </li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+        </div>
+    </div>
+{% endblock content%}
+</body>
+</html>
