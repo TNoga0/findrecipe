@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True
 
 # ALLOWED_HOSTS = ["localhost", "192.168.0.31"]
-ALLOWED_HOSTS = [".herokuapp.com"]
+ALLOWED_HOSTS = ["findrecipe.herokuapp.com", '127.0.0.1:8000']
 
 # Application definition
 
