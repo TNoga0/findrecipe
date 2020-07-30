@@ -54,28 +54,34 @@ class Command(BaseCommand):
                     else:
                         self.stdout.write(span[0].text)
                         ingredients, image_url = self.get_recipe_ingredients(a['href'])
-                        ingredients = parse.parse_ingredients(ingredients)
-                        self.add_new_ingredients(ingredients)
-                        # add new ingredients to ingredients database
-                        for ingred in ingredients:
-                            self.stdout.write(ingred)
-                        recipe = RecipeData(name=span[0].text,
-                                            address=a['href'],
-                                            ingredients=ingredients,
-                                            meal_type=meal_type,
-                                            image_url=image_url)
-                        recipe.save()
+                        if ingredients:
+                            ingredients = parse.parse_ingredients(ingredients)
+                            self.add_new_ingredients(ingredients)
+                            # add new ingredients to ingredients database
+                            for ingred in ingredients:
+                                self.stdout.write(ingred)
+                            recipe = RecipeData(name=span[0].text,
+                                                address=a['href'],
+                                                ingredients=ingredients,
+                                                meal_type=meal_type,
+                                                image_url=image_url)
+                            recipe.save()
+                        else:
+                            pass
         self.stdout.write("Recipes saved")
 
     @staticmethod
     def get_recipe_ingredients(address) -> [list, str]:
         url = urllib.request.urlopen(address)
         soup = bs.BeautifulSoup(url, 'html.parser')
-        list_ingredients = json.loads(soup.find('script', type='application/ld+json').string)[1]['recipeIngredient']
         try:
-            image_url = json.loads(soup.find('script', type='application/ld+json').string)[1]['image']['url']
-        except IndexError:
-            image_url = ""
+            list_ingredients = json.loads(soup.find('script', type='application/ld+json').string)[1]['recipeIngredient']
+            try:
+                image_url = json.loads(soup.find('script', type='application/ld+json').string)[1]['image']['url']
+            except IndexError:
+                image_url = ""
+        except AttributeError:
+            return ["", ""]
         return list_ingredients, image_url
 
     @staticmethod
