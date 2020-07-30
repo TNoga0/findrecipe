@@ -11,7 +11,7 @@ import { Redirect } from 'react-router-dom';
 const ContentsForm = (props) => {
 
   const [contents, setContents] = useState("");
-  const [meal_type, setMealType] = useState("");
+  const [meal_type, setMealType] = useState("breakfast");
 
   //PROP TO PUSH AFTER RECEIVING RESPONSE
   const [processed_recipes, setProcessedRecipes] = useState([]);
