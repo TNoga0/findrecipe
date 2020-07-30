@@ -2,5 +2,5 @@ import axios from 'axios';
 
 
 export default axios.create({
-  baseURL:'http://findrecipe.herokuapp.com/api'
+  baseURL:'https://findrecipe.herokuapp.com/api'
 })
