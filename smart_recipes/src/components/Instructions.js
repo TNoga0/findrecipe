@@ -5,6 +5,7 @@ function Instructions() {
   return (
     <div className="InstructionsComponent">
       <div className="div-content col-md-6">
+        <h3 className="instructions">So, you are looking for something to prepare from your fridge/shelf contents?</h3>
         <h3 className="instructions">The rules are simple:</h3>
         <div className="content">
           <ol>

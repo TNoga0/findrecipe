@@ -19,7 +19,7 @@ function Menu() {
         <div className="container-nav">
           <nav className="navbar navbar-inverse">
             <div className="navbar-header">
-              <span className="navbar-brand">Recipe Finder</span>
+              <span className="navbar-brand">Find Recipe</span>
             </div>
             <ul className="navbar-nav flex-row ml-auto">
               <li><Link to="/">Home</Link></li>
