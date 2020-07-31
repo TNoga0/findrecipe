@@ -11,6 +11,7 @@ const Results = props => {
     return(
       <div className="div-content col-md-6">
         <h3 className="about-header">Unfortunately, no recipe matching your fridge contents was found :(</h3>
+        <h3 className="about-header">Use "Home" to return to homepage and try again!</h3>
       </div>
     );
   }

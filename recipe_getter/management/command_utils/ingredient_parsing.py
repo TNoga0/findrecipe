@@ -81,6 +81,9 @@ ingredients_cleanup = [
     'grinds',
     'loaf',
     'loaves',
+    'jars',
+    'bar',
+    'candy',
 
     # preparation
 
@@ -126,6 +129,31 @@ ingredients_cleanup = [
     'such',
     'as',
     'serving',
+    'i',
+    "can't",
+    'believe',
+    "it's",
+    'not',
+    'lf',
+    'for',
+    'frying',
+    'fsp',
+    'plb',
+    'progresso',
+    'style',
+    'fillets',
+    'farmed',
+    'atlantic',
+    'pure/natural',
+    'morton',
+    'nak',
+    'di',
+    'giorno',
+    'kft',
+    'cch',
+    'dbl',
+    'rich',
+    'cam',
 
 ]
 
@@ -136,6 +164,11 @@ ingredients_to_be_swapped = {
     'salt and pepper': ['salt', 'pepper'],
     'pepper and salt': ['salt', 'pepper'],
     'herb and garlic feta': ["feta"],
+    'sugars': ['sugar'],
+    'eaches flour tortilla': ['flour tortilla'],
+    'eaches tortilla': ['tortilla'],
+    'strips pork': ['pork'],
+    'arborio/arboiro': ['arborio'],
 }
 
 

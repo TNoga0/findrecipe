@@ -81,7 +81,19 @@ class Command(BaseCommand):
             except IndexError:
                 image_url = ""
         except AttributeError:
-            return ["", ""]
+            try:
+                list_ingredients = []
+                soup = bs.BeautifulSoup(url, 'lxml')
+                list_search = soup.find_all('span',  class_='recipe-ingred_txt added')
+                try:
+                    image_url = soup.find_all('img', class_='rec-photo')[0]["src"]
+                except IndexError:
+                    image_url = ""
+                for ingredient in list_search:
+                    list_ingredients.append(ingredient.text)
+                return list_ingredients, image_url
+            except Exception as e:
+                return ["", ""]
         return list_ingredients, image_url
 
     @staticmethod
