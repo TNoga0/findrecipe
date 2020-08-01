@@ -25,7 +25,6 @@ const ContentsForm = (props) => {
       await recipes.get('/ingredients/')
         .then(
           resp => {
-            console.log(resp);
             setIngredientData(resp.data);
           }
         );
