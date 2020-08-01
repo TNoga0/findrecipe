@@ -18,7 +18,7 @@ const Results = props => {
   else {
     let recipes = JSON.parse(recipe_data);
 
-    console.log(recipe_data);
+    console.log(recipe_data.length);
 
     return (
       <div className="Results">
