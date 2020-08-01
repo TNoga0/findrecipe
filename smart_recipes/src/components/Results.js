@@ -18,6 +18,8 @@ const Results = props => {
   else {
     let recipes = JSON.parse(recipe_data);
 
+    console.log(recipe_data);
+
     return (
       <div className="Results">
           <Row justify="center">
