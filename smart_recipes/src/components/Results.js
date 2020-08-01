@@ -7,7 +7,7 @@ const Results = props => {
 
   const {recipe_data} = (props.location && props.location.state) || {};
 
-  if(recipe_data.length == 0){
+  if(recipe_data.length == 2){
     return(
       <div className="div-content col-md-6">
         <h3 className="about-header">Unfortunately, no recipe matching your fridge contents was found :(</h3>
@@ -17,8 +17,6 @@ const Results = props => {
   }
   else {
     let recipes = JSON.parse(recipe_data);
-
-    console.log(recipe_data.length);
 
     return (
       <div className="Results">
