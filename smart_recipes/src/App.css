@@ -65,17 +65,6 @@ End Tagify styles
   display: block;
 }
 
-.sticky .page-wrap:after {
-  height: 100px;
-}
-
-.sticky {
-  padding-top: 100px;
-  color: white;
-  font-family: 'Roboto' !important;
-  font-weight: 500;
-}
-
 /* end footer customisation */
 
 
