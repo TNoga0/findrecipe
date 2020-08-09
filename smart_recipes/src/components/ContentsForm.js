@@ -45,12 +45,11 @@ const ContentsForm = (props) => {
       const data = await response.json();
       $crf_token = data.csrfToken;
     }
-    console.log($crf_token);
     return $crf_token;
   }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     fetch("/process/", {
       method: "POST",
       cache: "no-cache",
