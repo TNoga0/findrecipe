@@ -6,6 +6,7 @@ from .forms import IngredientInputForm, SelectMealTypeForm
 from django import forms
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 from django.core import serializers
+from django.middleware.csrf import get_token
 
 
 from rest_framework import viewsets
@@ -21,6 +22,10 @@ class RecipeViewSet(viewsets.ModelViewSet):
 class IngredientViewSet(viewsets.ModelViewSet):
     queryset = Ingredient.objects.all().order_by('name')
     serializer_class = IngredientSerializer
+
+
+def csrf(request):
+    return JsonResponse({'csrfToken': get_token(request)})
 
 
 @ensure_csrf_cookie

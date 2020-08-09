@@ -37,16 +37,27 @@ const ContentsForm = (props) => {
 
   let $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
 
+  async function getCsrfToken() {
+    if ($crf_token === null) {
+      const response = await fetch(`/csrf/`, {
+        credentials: 'include',
+      });
+      const data = await response.json();
+      $crf_token = data.csrfToken;
+    }
+    return $crf_token;
+  }
+
   const handleSubmit = async (event) => {
-    console.log($crf_token);
     event.preventDefault();
     fetch("/process/", {
       method: "POST",
       cache: "no-cache",
       headers: {
         "Content-Type": "application/json",
-        "X-CSRFToken": $crf_token
+        "X-CSRFToken": await getCsrfToken(),
       },
+      credentials: 'include',
       body: JSON.stringify({contents: contents, meal_type: meal_type})
     })
       .then(response => response.json())
