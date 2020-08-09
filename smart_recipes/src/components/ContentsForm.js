@@ -49,7 +49,7 @@ const ContentsForm = (props) => {
   }
 
   const handleSubmit = async (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     fetch("/process/", {
       method: "POST",
       cache: "no-cache",
