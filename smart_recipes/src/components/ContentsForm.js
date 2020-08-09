@@ -48,7 +48,7 @@ const ContentsForm = (props) => {
     return $crf_token;
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     fetch("/process/", {
       method: "POST",
