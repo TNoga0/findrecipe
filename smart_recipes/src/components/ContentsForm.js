@@ -35,7 +35,7 @@ const ContentsForm = (props) => {
 
   //CRF TOKEN AND FORM SUBMIT
 
-  let $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+  let $crf_token = null;//$('[name="csrfmiddlewaretoken"]').attr('value');
 
   async function getCsrfToken() {
     if ($crf_token === null) {
@@ -48,7 +48,7 @@ const ContentsForm = (props) => {
     return $crf_token;
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     fetch("/process/", {
       method: "POST",
