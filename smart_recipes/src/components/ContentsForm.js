@@ -45,6 +45,7 @@ const ContentsForm = (props) => {
       const data = await response.json();
       $crf_token = data.csrfToken;
     }
+    console.log($crf_token);
     return $crf_token;
   }
 
