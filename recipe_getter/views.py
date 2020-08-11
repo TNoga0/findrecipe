@@ -24,6 +24,7 @@ class IngredientViewSet(viewsets.ModelViewSet):
     serializer_class = IngredientSerializer
 
 
+@ensure_csrf_cookie
 def csrf(request):
     return JsonResponse({'csrfToken': get_token(request)})
 
