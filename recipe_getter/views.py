@@ -32,10 +32,6 @@ def csrf(request):
 @ensure_csrf_cookie
 def process_recipes(request):
     if request.method == 'POST':
-        csrf_token = request.META.get(settings.CSRF_HEADER_NAME)
-        if csrf_token is not None:
-            # Use same token next time.
-            request.META['CSRF_COOKIE'] = csrf_token
         data = json.loads(request.body.decode('utf-8'))
         # extract contents and meal type from POST data
         contents = data["contents"]
